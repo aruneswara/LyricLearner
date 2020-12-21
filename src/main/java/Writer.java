@@ -13,7 +13,37 @@ public class Writer implements TextProcessor {
     private String txt;
     private String seed;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        InputStream inputStream = Writer.class.getResourceAsStream("/artists.txt");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        ArrayList<String> artists = new ArrayList<>();
+
+        try {
+            while(reader.ready()) {
+                String line = reader.readLine();
+                System.out.println(line);
+                artists.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        artists.remove(0);
+
+        for(String x: artists)
+        {
+            String[] s = new String[4];
+            s[0] = "/" + x.toLowerCase() + ".txt";
+            s[1] = x.toLowerCase() + "OUT.txt";
+            s[2] = "8";
+            s[3] = "1000";
+            driver(s);
+        }
+
+    }
+
+    public static void driver(String[] args) {
         //Check if k is not negative
         if (Integer.parseInt(args[2])<0)
         {
@@ -29,7 +59,8 @@ public class Writer implements TextProcessor {
         //read the file and catch potential errors
         TextProcessor writer = createProcessor(Integer.parseInt(args[2]));
         try{
-            FileReader testReader = new FileReader(args[0]);
+            InputStream inputStream = Writer.class.getResourceAsStream(args[0]);
+            BufferedReader testReader = new BufferedReader(new InputStreamReader(inputStream));
             int character = -1;
             StringBuffer test = new StringBuffer("");
             //append each character of the text file to the test stringBuffer
@@ -90,7 +121,8 @@ public class Writer implements TextProcessor {
 
     public void readText(String inputFilename) throws IOException {
         //reads in file to a StringBuffer and appends that to the class variable txt
-        FileReader reader = new FileReader(inputFilename);
+        InputStream inputStream = Writer.class.getResourceAsStream(inputFilename);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         int character = -1;
         StringBuffer text = new StringBuffer("");
         while ((character = reader.read()) != -1)
