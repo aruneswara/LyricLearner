@@ -1,4 +1,3 @@
-package assignment;
 import java.io.*;
 
 public interface TextProcessor {
