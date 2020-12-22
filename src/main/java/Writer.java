@@ -17,7 +17,7 @@ public class Writer implements TextProcessor {
     {
         InputStream inputStream = Writer.class.getResourceAsStream("/artists.txt");
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        ArrayList<String> artists = new ArrayList<>();
+        ArrayList<String> artists = new ArrayList<String>();
 
         try {
             while(reader.ready()) {
