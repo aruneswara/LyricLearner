@@ -36,8 +36,8 @@ public class Writer implements TextProcessor {
             String[] s = new String[4];
             s[0] = "/" + x.toLowerCase() + ".txt";
             s[1] = x.toLowerCase() + "OUT.txt";
-            s[2] = "10";
-            s[3] = "10000";
+            s[2] = "8";
+            s[3] = "100000";
             driver(s);
         }
 

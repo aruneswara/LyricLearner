@@ -71,6 +71,11 @@ public class LyricLearner {
                     z++;
                     if(z==i)
                     {
+                        if(line.indexOf('-')!=-1  || line.indexOf('&')!=-1)
+                        {
+                            i++;
+                            continue;
+                        }
                         sendTweet(line, artist);
                         System.out.println("Tweeting: " + line + "...");
                         break;
