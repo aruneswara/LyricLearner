@@ -33,12 +33,14 @@ public class Writer implements TextProcessor {
 
         for(String x: artists)
         {
+            System.out.println("processing " + x);
             String[] s = new String[4];
             s[0] = "/" + x.toLowerCase() + ".txt";
             s[1] = x.toLowerCase() + "OUT.txt";
             s[2] = "8";
             s[3] = "100000";
             driver(s);
+            System.out.println("finished " + x);
         }
 
     }
@@ -186,6 +188,7 @@ public class Writer implements TextProcessor {
         //k is subtracted from length because the initial seed was already added to the result string
         for (int i = 0; i<length-k;i++)
         {
+
             //first, check if the map already has the seed as a key and that there are values folllwing it
             if (map.containsKey(seed) && map.get(seed).size()!=0)
             {

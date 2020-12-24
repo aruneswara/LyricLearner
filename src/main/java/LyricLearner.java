@@ -95,6 +95,30 @@ public class LyricLearner {
     private static void sendTweet(String line, String artist) {
         Twitter twitter = TwitterFactory.getSingleton();
         Status status;
+        line = line.replaceAll("bitch", "b****");
+        line = line.replaceAll("nigga", "n****");
+        line = line.replaceAll("nigger", "n*****");
+        line = line.replaceAll("cunt", "c***");
+        line = line.replaceAll("shit", "s***");
+        line = line.replaceAll("asshole", "a******");
+        line = line.replaceAll("ass", "a**");
+        line = line.replaceAll("dick", "d***");
+        line = line.replaceAll("pussy", "p****");
+        line = line.replaceAll("cock", "c***");
+        line = line.replaceAll("hoe", "h**");
+        line = line.replaceAll("whore", "w****");
+        line = line.replaceAll("faggot", "f*****");
+        line = line.replaceAll("fag", "f**");
+        line = line.replaceAll("slut", "s***");
+        line = line.replaceAll("motherfucker", "m***********");
+        line = line.replaceAll("fucker", "f*****");
+        line = line.replaceAll("fuck", "f***");
+        line = line.replaceAll("tit", "t**");
+        line = line.replaceAll("titties", "t****es");
+        line = line.replaceAll("boob", "b***");
+        line = line.replaceAll("cum", "c**");
+
+
         try {
             status = twitter.updateStatus(artist + " be like \"" + line + "\"");
             System.out.println(status);
