@@ -121,7 +121,7 @@ public class LyricLearner {
 
         try {
             status = twitter.updateStatus(artist + " be like \"" + line + "\"");
-            System.out.println(status);
+            System.out.println(artist + " be like \"" + line + "\"");
         } catch (TwitterException e) {;
             e.printStackTrace();
         }
