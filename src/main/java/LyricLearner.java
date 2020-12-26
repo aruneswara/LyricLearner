@@ -101,7 +101,7 @@ public class LyricLearner {
                         line = line.replaceAll("cum", "c**");
 
                         sendTweet(line, artist);
-                        System.out.println("Tweeting: " + line + "...");
+                        System.out.println("Tweeting: " + artist + " be like \"" + line + "\"");
                         break;
                     }
 
@@ -124,7 +124,7 @@ public class LyricLearner {
 
         try {
             status = twitter.updateStatus(artist + " be like \"" + line + "\"");
-            System.out.println(artist + " be like \"" + line + "\"");
+            //System.out.println(artist + " be like \"" + line + "\"");
         } catch (TwitterException e) {;
             e.printStackTrace();
         }
