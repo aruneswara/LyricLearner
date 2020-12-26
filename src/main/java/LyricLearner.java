@@ -76,7 +76,7 @@ public class LyricLearner {
                             i++;
                             continue;
                         }
-
+                        line = line.trim();
                         line = line.replaceAll("bitch", "b****");
                         line = line.replaceAll("nigga", "n****");
                         line = line.replaceAll("nigger", "n*****");
