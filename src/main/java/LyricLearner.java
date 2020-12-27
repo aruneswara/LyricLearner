@@ -13,10 +13,11 @@ public class LyricLearner {
     public static void main(String[] args) {
         InputStream inputStream = Writer.class.getResourceAsStream("/artists.txt");
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        ArrayList<String> artists = new ArrayList<>();
+        ArrayList<String> artists = new ArrayList<String>();
 
         try {
             while(reader.ready()) {
+                
                 String line = reader.readLine();
                 System.out.println(line);
                 artists.add(line);
@@ -48,24 +49,24 @@ public class LyricLearner {
         int i = 0;
         Random rand = new Random();
         try {
-            try (
+
                     InputStream fis = new FileInputStream(artist.toLowerCase() + "OUT.txt");
                     BufferedReader br = new BufferedReader(new InputStreamReader(fis));
-            ) {
+
                 while ((br.readLine()) != null) {
                     i++;
                 }
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
         i = rand.nextInt(i);
         int z = 0;
         try {
-            try (
+
                     InputStream fis = new FileInputStream(artist.toLowerCase() + "OUT.txt");
                     BufferedReader br = new BufferedReader(new InputStreamReader(fis));
-            ) {
+
                 while ((line = br.readLine()) != null) {
                     // Deal with the line
                     z++;
@@ -96,9 +97,34 @@ public class LyricLearner {
                         line = line.replaceAll("fucker", "f*****");
                         line = line.replaceAll("fuck", "f***");
                         line = line.replaceAll("tit", "t**");
+                        line = line.replaceAll("titty", "t***y");
                         line = line.replaceAll("titties", "t****es");
                         line = line.replaceAll("boob", "b***");
                         line = line.replaceAll("cum", "c**");
+
+                        line = line.replaceAll("Bitch", "B****");
+                        line = line.replaceAll("Nigga", "N****");
+                        line = line.replaceAll("Nigger", "N*****");
+                        line = line.replaceAll("Cunt", "C***");
+                        line = line.replaceAll("Shit", "S***");
+                        line = line.replaceAll("Asshole", "A******");
+                        line = line.replaceAll("Ass", "A**");
+                        line = line.replaceAll("Dick", "D***");
+                        line = line.replaceAll("Pussy", "P****");
+                        line = line.replaceAll("Cock", "C***");
+                        line = line.replaceAll("Hoe", "H**");
+                        line = line.replaceAll("Whore", "W****");
+                        line = line.replaceAll("Faggot", "F*****");
+                        line = line.replaceAll("Fag", "F**");
+                        line = line.replaceAll("Slut", "S***");
+                        line = line.replaceAll("Motherfucker", "M***********");
+                        line = line.replaceAll("Fucker", "F*****");
+                        line = line.replaceAll("Fuck", "F***");
+                        line = line.replaceAll("Tit", "T**");
+                        line = line.replaceAll("Titty", "T***y");
+                        line = line.replaceAll("Titties", "T****es");
+                        line = line.replaceAll("Boob", "B***");
+                        line = line.replaceAll("Cum", "C**");
 
                         sendTweet(line, artist);
                         System.out.println("Tweeting: " + artist + " be like \"" + line + "\"");
@@ -107,7 +133,7 @@ public class LyricLearner {
 
 
                 }
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
