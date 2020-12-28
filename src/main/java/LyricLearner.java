@@ -35,7 +35,7 @@ public class LyricLearner {
             tweetLines(artists.get(rand.nextInt(artists.size())));
             try {
                 System.out.println("Sleeping for 1 hour...");
-                Thread.sleep(3600000); // every 60 minutes
+                Thread.sleep(3600000); // every 1.5 minutes
                 // Thread.sleep(10000); // every 10 seconds
             } catch (InterruptedException e) {
                 e.printStackTrace();
